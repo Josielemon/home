@@ -1,0 +1,131 @@
+:root {
+    --primary-color: #4a6cf7;
+    --secondary-color: #6c757d;
+    --background-color: #f4f7ff;
+    --card-background: white;
+    --text-color: #333;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin: 30px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#logo {
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#logo:hover {
+    transform: scale(1.05);
+}
+
+.transaction-input,
+.transaction-card {
+    background-color: var(--card-background);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    margin: 20px auto;
+    padding: 24px;
+    width: 90%;
+    max-width: 850px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.money-image {
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.money-image:hover {
+    transform: scale(1.1);
+}
+
+input[type='text'],
+input[type='number'],
+input[type='date'] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+input[type='text']:focus,
+input[type='number']:focus,
+input[type='date']:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#add-line {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+#add-line:hover {
+    background-color: #3a5af3;
+    transform: translateY(-2px);
+}
+
+#add-line:active {
+    transform: translateY(1px);
+}
+
+.total-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -6px 6px rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .transaction-input,
+    .transaction-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input[type='radio'] {
+        margin-right: 10px;
+    }
+}
